@@ -49,10 +49,6 @@ streamlit run app.py
 | dr_bob | doc123 | Doctor |
 | alice | rec123 | Receptionist |
 
-## 📸 Screenshots
-
-[Add screenshots here]
-
 ## 🎓 Academic Context
 
 This project was developed for the **Information Security (CS-3002)** course, 
@@ -64,7 +60,6 @@ into Data Privacy Evolution" from RSA Conference 2024.
 ## 📄 License
 
 MIT / Apache 2.0
-![Project](https://img.shields.io/badge/Project-Hospital_Management_System-blue)
 
 ## 👨‍💻 Author
 
