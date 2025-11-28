@@ -64,27 +64,8 @@ into Data Privacy Evolution" from RSA Conference 2024.
 ## 📄 License
 
 MIT / Apache 2.0
+![Project](https://img.shields.io/badge/Project-Hospital_Management_System-blue)
 
 ## 👨‍💻 Author
 
 Ramzan Asif
-```
-
----
-![Project](https://img.shields.io/badge/Project-Hospital_Management_System-blue)
-
-
-gdpr
-healthcare
-privacy
-streamlit
-python
-data-anonymization
-encryption
-rbac
-information-security
-cia-triad
-audit-logging
-sqlite
-data-protection
-```
