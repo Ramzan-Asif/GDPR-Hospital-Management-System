@@ -1,0 +1,4 @@
+# Add to .gitignore
+secret.key
+*.db
+__pycache__/

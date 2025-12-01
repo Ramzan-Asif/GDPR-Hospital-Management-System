@@ -4,10 +4,16 @@ from auth import verify_login, log_activity
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
+# Add these imports to app.py
 from privacy import (
-    get_patient_data, 
-    add_patient, 
-    anonymize_all_patients
+    get_patient_data,
+    add_patient,
+    anonymize_all_patients,
+    encrypt_patient_data,
+    decrypt_patient_data,
+    set_retention_period,
+    check_expired_data,
+    delete_expired_data
 )
 import sqlite3
 
