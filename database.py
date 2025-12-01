@@ -73,33 +73,36 @@ def seed_users():
 # Add to database.py
 
 def add_gdpr_columns():
-    """Add GDPR-related columns to patients table"""
+    """Add GDPR-related columns (FIXED VERSION)"""
     conn = sqlite3.connect('hospital.db')
     cursor = conn.cursor()
     
-    try:
-        # Add consent column
+    # Check existing columns first
+    cursor.execute("PRAGMA table_info(patients)")
+    existing_columns = [col[1] for col in cursor.fetchall()]
+    
+    # Add consent_given if missing
+    if 'consent_given' not in existing_columns:
         cursor.execute("""
             ALTER TABLE patients 
             ADD COLUMN consent_given INTEGER DEFAULT 0
         """)
         print("✅ Added consent_given column")
-    except:
-        print("⚠️ consent_given column already exists")
+    else:
+        print("ℹ️ consent_given already exists")
     
-    try:
-        # Add data retention date column
+    # Add retention_date if missing
+    if 'retention_date' not in existing_columns:
         cursor.execute("""
             ALTER TABLE patients 
             ADD COLUMN retention_date TEXT
         """)
         print("✅ Added retention_date column")
-    except:
-        print("⚠️ retention_date column already exists")
+    else:
+        print("ℹ️ retention_date already exists")
     
     conn.commit()
     conn.close()
-    print("✅ GDPR columns added successfully!")
 
 
 if __name__ == "__main__":
