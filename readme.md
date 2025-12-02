@@ -37,6 +37,9 @@ cd gdpr-hospital-management-system
 # Install dependencies
 pip install -r requirements.txt
 
+# Run just first time
+python setup.py
+
 # Start the application
 streamlit run app.py
 ```

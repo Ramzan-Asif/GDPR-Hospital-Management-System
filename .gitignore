@@ -1,4 +1,6 @@
 # Add to .gitignore
 secret.key
+hospital.db
 *.db
 __pycache__/
+venv/

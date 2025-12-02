@@ -4,6 +4,7 @@ from cryptography.fernet import Fernet
 from auth import log_activity  # Import for logging
 import os
 from datetime import datetime
+from setup import setup_encryption_key
 
 def anonymize_name(patient_id):
     """
@@ -343,14 +344,6 @@ def delete_expired_data():
     finally:
         conn.close()
 
-# Encryption key management
-def generate_encryption_key():
-    """Generate and save encryption key (run once)"""
-    key = Fernet.generate_key()
-    with open('secret.key', 'wb') as key_file:
-        key_file.write(key)
-    print("✅ Encryption key generated and saved!")
-    return key
 
 
 def load_encryption_key():
@@ -359,7 +352,7 @@ def load_encryption_key():
         return open('secret.key', 'rb').read()
     except FileNotFoundError:
         print("⚠️ Key file not found. Generating new key...")
-        return generate_encryption_key()
+        return setup_encryption_key()
 
 
 def encrypt_data(data):
